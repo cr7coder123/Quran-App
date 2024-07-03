@@ -72,15 +72,12 @@
         <button id="Bukarah">BUKARAH</button>
       </div>
       <div style="padding:10px; text-align: center; width:60%" id="results">
-        <text id="Text">hello</text>
+        <text id="Text"></text>
+        <audio id="Audio" style="margin:20px" controls>
+          
+        </audio>
       </div>
     </div>
-
-    <div>
-      <object data="Grade 12 Advanced Functions.pdf" type="application/pdf" width="500" height="500">
-          alt : <a href="Grade 12 Advanced Functions.pdf">test.pdf</a>
-      </object>
-  </div>
 
 
     <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
@@ -101,6 +98,6 @@ const Button1 = document.getElementById('Fatiha');
     })
 const Button2 = document.getElementById('Bukarah');
     Bukarah.addEventListener('click', function() {
-        document.getElementById('Text').innerText = "COw"
+        document.getElementById('Text').innerText =""
     })
 </script>
