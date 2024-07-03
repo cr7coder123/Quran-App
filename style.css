@@ -12,11 +12,30 @@
     }
 
 #results:hover{
-    transform: scale(1.05);
+    transform: scale(1.01);
     background-color: skyblue;
     box-shadow: inset 2500px 0 0 0 rgb(76, 138, 162);
 } 
 
+#sidebar{
+    display:flex; 
+    flex-direction:column;
+    flex-wrap:nowrap;
+    padding: 10px;
+    background-color: lightblue;
+    font-size:40%;
+    overflow:auto; 
+    width:40%;
+}
+
+button{
+    padding:1%;
+    margin:5px;
+    background-color:cadetblue;
+    border: cadetblue;
+    border-radius: 20px;
+    color:white;
+}
 
 #buttons{
     text-decoration: none; 

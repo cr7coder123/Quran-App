@@ -63,6 +63,26 @@
         <i style="margin-bottom: 10px"  class="fa-solid fa-gear"></i>
       </a>
     </div>
+
+
+
+    <div style="display: flex; flex-direction: row;">
+      <div id="sidebar">
+        <button id="Fatiha">FATIHA</button>
+        <button id="Bukarah">BUKARAH</button>
+      </div>
+      <div style="padding:10px; text-align: center; width:60%" id="results">
+        <text id="Text">hello</text>
+      </div>
+    </div>
+
+    <div>
+      <object data="Grade 12 Advanced Functions.pdf" type="application/pdf" width="500" height="500">
+          alt : <a href="Grade 12 Advanced Functions.pdf">test.pdf</a>
+      </object>
+  </div>
+
+
     <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
         <a href="https://www.youtube.com/@RocketRoni2007">
           <i style="font-size:25px; margin:20px; text-decoration:none; color: white;" class="fa-brands fa-youtube"></i>
@@ -73,3 +93,14 @@
     </div>
   </body>
 </html>
+
+<script>
+const Button1 = document.getElementById('Fatiha');
+    Fatiha.addEventListener('click', function() {
+        document.getElementById('Text').innerText = "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ\nAll praise is for Allah—Lord of all worlds\nٱلرَّحْمَـٰنِ ٱلرَّحِيمِ\nthe Most Compassionate, Most Merciful\nمَـٰلِكِ يَوْمِ ٱلدِّينِ\nMaster of the Day of Judgment.\nإِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ\nYou ˹alone˺ we worship and You ˹alone˺ we ask for help\nٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ \nGuide us along the Straight Path,\nصِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ\nthe Path of those You have blessed—not those You are displeased with, or those who are astray."
+    })
+const Button2 = document.getElementById('Bukarah');
+    Bukarah.addEventListener('click', function() {
+        document.getElementById('Text').innerText = "COw"
+    })
+</script>
