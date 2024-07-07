@@ -29,6 +29,17 @@
 }
 
 button{
+  justify-content:center; 
+  background:#7CB9E4; 
+  color:white;
+  align-items: center;
+  border: cadetblue;
+  border-radius: 20px;
+  padding:10px;
+  margin:15px;
+}
+
+#surah{
     padding:10px;
     margin:15px;
     border: cadetblue;
@@ -43,10 +54,16 @@ button{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width:33%;
 }
-button:hover{
+#surah:hover{
     transform: scale(1.05);
     background-color: lightblue;
+    button{
+      background-color: lightblue;
+    }
 }
+
+
+
  
 
 #quran{

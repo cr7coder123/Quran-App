@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <meta http-equiv="refresh" content="1">
     <title>SALAH TRACKER</title>
     <link
       rel="stylesheet"
@@ -67,7 +66,18 @@
 
     <div style="text-align: center; margin:20px">
       <text id="time">-</text>
-    </div>
+  </div>
+  <div style="background-color: cadetblue; justify-content: center; text-align: center; color:white; margin: 20px; font-size:120%" >
+   <text id="Fajr"></text>
+   <br/>
+   <text id="Dhuhr"></text>
+   <br/>
+   <text id="Asr"></text>
+   <br/>
+   <text id="Maghrib"></text>
+   <br/>
+   <text id="Isha"></text>
+  </div>
 
     <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
         <a href="https://www.youtube.com/@RocketRoni2007">
@@ -79,6 +89,12 @@
     </div>
   </body>
   <script>
+    var Fajr=document.getElementById("Fajr")
+    var Dhuhr=document.getElementById("Dhuhr")
+    var Asr=document.getElementById("Asr")
+    var Maghrib=document.getElementById("Maghrib")
+    var Isha=document.getElementById("Isha")
+function time(){
     var sec = new Date().getSeconds();
     var secZ = 0;
     if (sec < 10) {
@@ -109,14 +125,44 @@
     } else {
       num = '';
     }
+
+    var location='https://ipinfo.io/json'
+    var city
+    fetch(location)
+      .then((response)=> response.json())
+      .then((responseJson)=>{
+        city=responseJson.city;
+      })
     var url =
       'https://api.aladhan.com/v1/calendarByAddress/' +
       year +
       '/' +
       num +
       month +
-      '?address=Oakville&method=2&month=12&year=2023';
+      '?address='+
+      city+
+      '&method';
+    fetch(url)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        for (var i in responseJson.data) {
+      var faj = responseJson.data[day - 1].timings.Fajr;
+      var dhu = responseJson.data[day - 1].timings.Dhuhr;
+      var asr = responseJson.data[day - 1].timings.Asr;
+      var mag = responseJson.data[day - 1].timings.Maghrib;
+      var ish = responseJson.data[day - 1].timings.Isha;
+      Fajr.innerHTML="Fajr: "+faj
+      Dhuhr.innerHTML="Dhuhr: "+dhu
+      Asr.innerHTML="Asr: "+asr
+      Maghrib.innerHTML="Maghrib: "+mag
+      Isha.innerHTML="Isha: "+ish
+    }
+    
+    }
+    );
     document.getElementById('time').innerText="CURRENT TIME: "+hourZ+hour+":"+minZ+min+":"+secZ+sec
+  }
+  setInterval(time,1000)
   </script>
 </html>
 
