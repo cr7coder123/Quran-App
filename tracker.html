@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="refresh" content="1">
     <title>SALAH TRACKER</title>
     <link
       rel="stylesheet"
@@ -64,8 +65,10 @@
       </a>
     </div>
 
+    <div style="text-align: center; margin:20px">
+      <text id="time">-</text>
+    </div>
 
-    
     <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
         <a href="https://www.youtube.com/@RocketRoni2007">
           <i style="font-size:25px; margin:20px; text-decoration:none; color: white;" class="fa-brands fa-youtube"></i>
@@ -75,5 +78,45 @@
         </a>
     </div>
   </body>
+  <script>
+    var sec = new Date().getSeconds();
+    var secZ = 0;
+    if (sec < 10) {
+      secZ = 0;
+    } else {
+      secZ = '';
+    }
+    var min = new Date().getMinutes();
+    var minZ = 0;
+    if (min < 10) {
+      minZ = 0;
+    } else {
+      minZ = '';
+    }
+    var hour=new Date().getHours();
+    var hourZ = 0;
+    if (hour < 10) {
+      hourZ = 0;
+    } else {
+      hourZ = '';
+    }
+    var day = new Date().getDate();
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
+    var num = 0;
+    if (month < 10) {
+      num = 0;
+    } else {
+      num = '';
+    }
+    var url =
+      'https://api.aladhan.com/v1/calendarByAddress/' +
+      year +
+      '/' +
+      num +
+      month +
+      '?address=Oakville&method=2&month=12&year=2023';
+    document.getElementById('time').innerText="CURRENT TIME: "+hourZ+hour+":"+minZ+min+":"+secZ+sec
+  </script>
 </html>
 
