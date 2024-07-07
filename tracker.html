@@ -70,16 +70,17 @@
   <div style="text-align: center; margin:20px">
     <text id="location">-</text>
 </div>
-  <div style="background-color: cadetblue; justify-content: center; text-align: center; color:white; margin: 20px; font-size:120%" >
-   <text id="Fajr"></text>
-   <br/>
-   <text id="Dhuhr"></text>
-   <br/>
-   <text id="Asr"></text>
-   <br/>
-   <text id="Maghrib"></text>
-   <br/>
-   <text id="Isha"></text>
+  <div style=" display:flex; flex-direction: column;background-color: cadetblue; justify-content: center; text-align: center; color:white; margin: 20px; font-size:120%" >
+   <b><text id="Fajr"></text></b>
+   <text id="TimerFajr"></text>
+   <b><text id="Dhuhr"></text></b>
+   <text id="TimerDhuhr"></text>
+   <b><text id="Asr"></text></b>
+   <text id="TimerAsr"></text>
+   <b><text id="Maghrib"></text></b>
+   <text id="TimerMaghrib"></text>
+   <b><text id="Isha"></text></b>
+   <text id="TimerIsha"></text>
   </div>
 
     <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
@@ -93,11 +94,16 @@
   </body>
   <script>
     var Fajr=document.getElementById("Fajr")
+    var TimerFajr=document.getElementById("TimerFajr")
     var Dhuhr=document.getElementById("Dhuhr")
+    var TimerDhuhr=document.getElementById("TimerDhuhr")
     var Asr=document.getElementById("Asr")
+    var TimerAsr=document.getElementById("TimerAsr")
     var Maghrib=document.getElementById("Maghrib")
+    var TimerMaghrib=document.getElementById("TimerMaghrib")
     var Isha=document.getElementById("Isha")
-    var loca=document.getElementById("location")
+    var TimerIsha=document.getElementById("TimerIsha")
+    /*var loca=document.getElementById("location")*/
 function time(){
     var sec = new Date().getSeconds();
     var secZ = 0;
@@ -130,14 +136,14 @@ function time(){
       num = '';
     }
 
-    var location='https://ipinfo.io/json'
+    /*var location='https://ipinfo.io/json'
     var city
     fetch(location)
       .then((response)=> response.json())
       .then((responseJson)=>{
-        console.log(responseJson)
+
       })
-    loca.innerHTML="LOCATION: "+city
+    loca.innerHTML="LOCATION: "+city*/
     var url =
       'https://api.aladhan.com/v1/calendarByAddress/' +
       year +
@@ -145,7 +151,7 @@ function time(){
       num +
       month +
       '?address='+
-      city+
+      "Oakville"+
       '&method=2&month=12&year=2023';
     fetch(url)
       .then((response) => response.json())
@@ -162,6 +168,25 @@ function time(){
       Maghrib.innerHTML="Maghrib: "+mag
       Isha.innerHTML="Isha: "+ish
 
+      fajHour=faj[0]+faj[1]
+      fajMin=faj[3]+faj[4]
+      TimerFajr.innerHTML="Time Until Fajr: "+(fajHour-hour)+" hr and "+(fajMin-min)+" min"
+
+      dhuHour=dhu[0]+dhu[1]
+      dhuMin=dhu[3]+dhu[4]
+      TimerDhuhr.innerHTML="Time Until Dhuhr: "+(dhuHour-hour)+" hr and "+(dhuMin-min)+" min"
+
+      asrHour=asr[0]+asr[1]
+      asrMin=asr[3]+asr[4]
+      TimerAsr.innerHTML="Time Until Asr: "+(asrHour-hour)+" hr and "+(asrMin-min)+" min"
+
+      magHour=mag[0]+mag[1]
+      magMin=mag[3]+mag[4]
+      TimerMaghrib.innerHTML="Time Until Maghrib: "+(magHour-hour)+" hr and "+(magMin-min)+" min"
+
+      ishHour=ish[0]+ish[1]
+      ishMin=ish[3]+ish[4]
+      TimerIsha.innerHTML="Time Until Isha: "+(ishHour-hour)+" hr and "+(ishMin-min)+" min"
     }
     
     }
