@@ -67,6 +67,9 @@
     <div style="text-align: center; margin:20px">
       <text id="time">-</text>
   </div>
+  <div style="text-align: center; margin:20px">
+    <text id="location">-</text>
+</div>
   <div style="background-color: cadetblue; justify-content: center; text-align: center; color:white; margin: 20px; font-size:120%" >
    <text id="Fajr"></text>
    <br/>
@@ -94,6 +97,7 @@
     var Asr=document.getElementById("Asr")
     var Maghrib=document.getElementById("Maghrib")
     var Isha=document.getElementById("Isha")
+    var loca=document.getElementById("location")
 function time(){
     var sec = new Date().getSeconds();
     var secZ = 0;
@@ -131,8 +135,9 @@ function time(){
     fetch(location)
       .then((response)=> response.json())
       .then((responseJson)=>{
-        city=responseJson.city;
+        console.log(responseJson)
       })
+    loca.innerHTML="LOCATION: "+city
     var url =
       'https://api.aladhan.com/v1/calendarByAddress/' +
       year +
@@ -141,7 +146,7 @@ function time(){
       month +
       '?address='+
       city+
-      '&method';
+      '&method=2&month=12&year=2023';
     fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -156,6 +161,7 @@ function time(){
       Asr.innerHTML="Asr: "+asr
       Maghrib.innerHTML="Maghrib: "+mag
       Isha.innerHTML="Isha: "+ish
+
     }
     
     }
