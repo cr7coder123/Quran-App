@@ -51,9 +51,10 @@ button{
     background:#7CB9E4; 
     color:white;
     align-items: center;
-    font-size:90%;
+    font-size:70%;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width:33%;
+    text-align: center;;
 }
 #surah:hover{
     transform: scale(1.05);
