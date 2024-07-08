@@ -63,12 +63,15 @@
         <i style="margin-bottom: 10px"  class="fa-solid fa-gear"></i>
       </a>
     </div>
+  <div style="text-align: center; margin:20px">
+      <text style="color:white; font-size: 120%;" id="date">-</text>
+  </div>
 
-    <div style="text-align: center; margin:20px">
-      <text id="time">-</text>
+  <div style="text-align: center; margin:20px">
+      <text style="color:white; font-size: 150%;" id="time">-</text>
   </div>
   <div style="text-align: center; margin:20px">
-    <text id="location"></text>
+    <text id="location">(Default Location: Oakville, Ontario)</text>
 </div>
   <div style=" display:flex; flex-direction: column;background-color: cadetblue; justify-content: center; text-align: center; color:white; margin: 20px; font-size:120%" >
    <b><text id="Fajr"></text></b>
@@ -103,6 +106,7 @@
     var TimerMaghrib=document.getElementById("TimerMaghrib")
     var Isha=document.getElementById("Isha")
     var TimerIsha=document.getElementById("TimerIsha")
+    var islamicDate=document.getElementById("date")
     /*var loca=document.getElementById("location")*/
 function time(){
     var sec = new Date().getSeconds();
@@ -153,21 +157,24 @@ function time(){
       month +
       '?address='+
       "Oakville"+
-      '&method=2&month=12&year=2023';
+      '&method';
     fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
         for (var i in responseJson.data) {
-      var faj = responseJson.data[day - 1].timings.Fajr;
-      var dhu = responseJson.data[day - 1].timings.Dhuhr;
-      var asr = responseJson.data[day - 1].timings.Asr;
-      var mag = responseJson.data[day - 1].timings.Maghrib;
-      var ish = responseJson.data[day - 1].timings.Isha;
+      var faj = responseJson.data[day-1].timings.Fajr;
+      var dhu = responseJson.data[day-1].timings.Dhuhr;
+      var asr = responseJson.data[day-1].timings.Asr;
+      var mag = responseJson.data[day-1].timings.Maghrib;
+      var ish = responseJson.data[day-1].timings.Isha;
+      var dat = responseJson.data[day-1].date.hijri.date;
+      console.log(dat)
       Fajr.innerHTML="Fajr: "+faj
       Dhuhr.innerHTML="Dhuhr: "+dhu
       Asr.innerHTML="Asr: "+asr
       Maghrib.innerHTML="Maghrib: "+mag
       Isha.innerHTML="Isha: "+ish
+      islamicDate.innerHTML="ISLAMIC DATE: "+dat
 
       fajHour=(faj[0]+faj[1]-hour)*60
       fajMin=(faj[3]+faj[4])-min
