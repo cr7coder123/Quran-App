@@ -168,25 +168,50 @@ function time(){
       Maghrib.innerHTML="Maghrib: "+mag
       Isha.innerHTML="Isha: "+ish
 
-      fajHour=faj[0]+faj[1]
-      fajMin=faj[3]+faj[4]
-      TimerFajr.innerHTML="Time Until Fajr: "+(fajHour-hour)+" hr and "+(fajMin-min)+" min"
+      fajHour=(faj[0]+faj[1]-hour)*60
+      fajMin=(faj[3]+faj[4])-min
+      fajTotalMin=(fajHour+fajMin)
+      fajHour=Math.floor(fajTotalMin/60)
+      fajMin=fajTotalMin%60
+      if (fajHour>0||fajMin>0){
+      TimerFajr.innerHTML="Time Until Fajr: "+fajHour+" hr and "+fajMin+" min"
+      }
 
-      dhuHour=dhu[0]+dhu[1]
-      dhuMin=dhu[3]+dhu[4]
-      TimerDhuhr.innerHTML="Time Until Dhuhr: "+(dhuHour-hour)+" hr and "+(dhuMin-min)+" min"
+      dhuHour=(dhu[0]+dhu[1]-hour)*60
+      dhuMin=(dhu[3]+dhu[4])-min
+      dhuTotalMin=(dhuHour+dhuMin)
+      dhuHour=Math.floor(dhuTotalMin/60)
+      dhuMin=dhuTotalMin%60
+      if (dhuHour>0||dhuMin>0){
+        TimerDhuhr.innerHTML="Time Until Dhuhr: "+dhuHour+" hr and "+dhuMin+" min"
+      }
 
-      asrHour=asr[0]+asr[1]
-      asrMin=asr[3]+asr[4]
-      TimerAsr.innerHTML="Time Until Asr: "+(asrHour-hour)+" hr and "+(asrMin-min)+" min"
+      asrHour=(asr[0]+asr[1]-hour)*60
+      asrMin=(asr[3]+asr[4])-min
+      asrTotalMin=(asrHour+asrMin)
+      asrHour=Math.floor(asrTotalMin/60)
+      asrMin=asrTotalMin%60
+      if (asrHour>0||asrMin>0){
+        TimerAsr.innerHTML="Time Until Asr: "+asrHour+" hr and "+asrMin+" min"
+      }
 
-      magHour=mag[0]+mag[1]
-      magMin=mag[3]+mag[4]
-      TimerMaghrib.innerHTML="Time Until Maghrib: "+(magHour-hour)+" hr and "+(magMin-min)+" min"
+      magHour=(mag[0]+mag[1]-hour)*60
+      magMin=(mag[3]+mag[4])-min
+      magTotalMin=(magHour+magMin)
+      magHour=Math.floor(magTotalMin/60)
+      magMin=magTotalMin%60
+      if (magHour>0||magMin>0){
+          TimerMaghrib.innerHTML="Time Until Maghrib: "+magHour+" hr and "+magMin+" min"
+      }
 
-      ishHour=ish[0]+ish[1]
-      ishMin=ish[3]+ish[4]
-      TimerIsha.innerHTML="Time Until Isha: "+(ishHour-hour)+" hr and "+(ishMin-min)+" min"
+      ishHour=(ish[0]+ish[1]-hour)*60
+      ishMin=(ish[3]+ish[4])-min
+      ishTotalMin=(ishHour+ishMin)
+      ishHour=Math.floor(ishTotalMin/60)
+      ishMin=ishTotalMin%60
+      if (ishHour>0||ishMin>0){
+      TimerIsha.innerHTML="Time Until Isha: "+ishHour+" hrs "+ishMin+" Mins"
+      }
     }
     
     }
