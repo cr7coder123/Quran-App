@@ -63,27 +63,34 @@
         <i style="margin-bottom: 10px"  class="fa-solid fa-gear"></i>
       </a>
     </div>
-  <div style="text-align: center; margin:20px">
+
+    <div style="text-align: center; margin:10px">
+      <text style="color:white; font-size: 110%;" id="location">(Default Location: Oakville, Ontario)</text>
+  </div>
+
+  <div style="text-align: center; margin:10px">
       <text style="color:white; font-size: 120%;" id="date">-</text>
   </div>
 
-  <div style="text-align: center; margin:20px">
+  <div style="text-align: center; margin:10px">
+    <text style="color:white; font-size: 120%;" id="greDate">-</text>
+</div>
+
+  <div style="text-align: center; margin:10px">
       <text style="color:white; font-size: 150%;" id="time">-</text>
   </div>
-  <div style="text-align: center; margin:20px">
-    <text id="location">(Default Location: Oakville, Ontario)</text>
-</div>
-  <div style=" display:flex; flex-direction: column;background-color: cadetblue; justify-content: center; text-align: center; color:white; margin: 20px; font-size:120%" >
+
+  <div style=" display:flex; flex-direction: column;background-color: cadetblue; justify-content: center; text-align: center; color:white; margin: 30px; font-size:120%" >
    <b><text id="Fajr"></text></b>
-   <text id="TimerFajr">-</text>
+   <text id="TimerFajr"></text>
    <b><text id="Dhuhr"></text></b>
-   <text id="TimerDhuhr">-</text>
+   <text id="TimerDhuhr"></text>
    <b><text id="Asr"></text></b>
-   <text id="TimerAsr">-</text>
+   <text id="TimerAsr"></text>
    <b><text id="Maghrib"></text></b>
-   <text id="TimerMaghrib">-</text>
+   <text id="TimerMaghrib"></text>
    <b><text id="Isha"></text></b>
-   <text id="TimerIsha">-</text>
+   <text id="TimerIsha"></text>
   </div>
 
     <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
@@ -131,7 +138,19 @@ function time(){
       hourZ = '';
     }
     var day = new Date().getDate();
+    var dayZ = 0;
+    if (day < 10) {
+      dayZ = 0;
+    } else {
+      dayZ = '';
+    }
     var month = new Date().getMonth() + 1;
+    var monthZ = 0;
+    if (month < 10) {
+      monthZ = 0;
+    } else {
+      monthZ = '';
+    }
     var year = new Date().getFullYear();
     var num = 0;
     if (month < 10) {
@@ -224,6 +243,7 @@ function time(){
     
     }
     );
+    document.getElementById("greDate").innerText="Gregorian Date: "+dayZ+day+"-"+monthZ+month+"-"+year
     document.getElementById('time').innerText="CURRENT TIME: "+hourZ+hour+":"+minZ+min+":"+secZ+sec
   }
   setInterval(time,1000)
