@@ -68,19 +68,19 @@
       <text id="time">-</text>
   </div>
   <div style="text-align: center; margin:20px">
-    <text id="location">-</text>
+    <text id="location"></text>
 </div>
   <div style=" display:flex; flex-direction: column;background-color: cadetblue; justify-content: center; text-align: center; color:white; margin: 20px; font-size:120%" >
    <b><text id="Fajr"></text></b>
-   <text id="TimerFajr"></text>
+   <text id="TimerFajr">-</text>
    <b><text id="Dhuhr"></text></b>
-   <text id="TimerDhuhr"></text>
+   <text id="TimerDhuhr">-</text>
    <b><text id="Asr"></text></b>
-   <text id="TimerAsr"></text>
+   <text id="TimerAsr">-</text>
    <b><text id="Maghrib"></text></b>
-   <text id="TimerMaghrib"></text>
+   <text id="TimerMaghrib">-</text>
    <b><text id="Isha"></text></b>
-   <text id="TimerIsha"></text>
+   <text id="TimerIsha">-</text>
   </div>
 
     <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
@@ -136,6 +136,7 @@ function time(){
       num = '';
     }
 
+  
     /*var location='https://ipinfo.io/json'
     var city
     fetch(location)
