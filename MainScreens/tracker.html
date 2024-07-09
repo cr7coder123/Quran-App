@@ -65,7 +65,10 @@
     </div>
 
     <div style="text-align: center; margin:10px">
-      <text style="color:white; font-size: 110%;" id="location">(Default Location: Oakville, Ontario)</text>
+    <form>
+      <input type="text" id="location" style="height:30px; width:75%;justify-content: center; align-self: center; border-radius: 10px; font-size: 110%; " value=" ENTER YOUR LOCATION(Ex: New York, America)">
+      <button type="button" onclick="update()">SEARCH</button>
+    </form>
   </div>
 
   <div style="text-align: center; margin:10px">
@@ -79,6 +82,8 @@
   <div style="text-align: center; margin:10px">
       <text style="color:white; font-size: 150%;" id="time">-</text>
   </div>
+
+
 
   <div style=" display:flex; flex-direction: column;background-color: cadetblue; justify-content: center; text-align: center; color:white; margin: 30px; font-size:120%" >
    <b><text id="Fajr"></text></b>
@@ -103,6 +108,12 @@
     </div>
   </body>
   <script>
+  function update(){
+  City= document.getElementById("location").value
+  console.log(City)
+  return City
+  }
+
     var Fajr=document.getElementById("Fajr")
     var TimerFajr=document.getElementById("TimerFajr")
     var Dhuhr=document.getElementById("Dhuhr")
@@ -114,7 +125,6 @@
     var Isha=document.getElementById("Isha")
     var TimerIsha=document.getElementById("TimerIsha")
     var islamicDate=document.getElementById("date")
-    /*var loca=document.getElementById("location")*/
 function time(){
     var sec = new Date().getSeconds();
     var secZ = 0;
@@ -158,16 +168,10 @@ function time(){
     } else {
       num = '';
     }
-
   
-    /*var location='https://ipinfo.io/json'
-    var city
-    fetch(location)
-      .then((response)=> response.json())
-      .then((responseJson)=>{
 
-      })
-    loca.innerHTML="LOCATION: "+city*/
+ 
+
     var url =
       'https://api.aladhan.com/v1/calendarByAddress/' +
       year +
@@ -175,7 +179,7 @@ function time(){
       num +
       month +
       '?address='+
-      "Oakville"+
+      City+
       '&method';
     fetch(url)
       .then((response) => response.json())
