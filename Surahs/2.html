@@ -29,23 +29,10 @@
       <text>To find the Aya/Verse you are looking for do the following. If you are on a laptop use Ctrl+f. If you are on mobile press the share button </text><i class="fa-solid fa-arrow-up-from-bracket"></i><text> on your browser and then scroll down to "find on/in page"</text>
     </div>
 
-    <div style="display:flex; flex-direction: column; justify-content: center; align-items: center;" id="results">
-      <audio style="margin:20px" controls>
-        <source src="../Sounds/2.1.mp3"/>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 20px;">
+      <audio id="combinedAudio" controls>
       </audio>
-      <audio style="margin:20px" controls>
-        <source src="../Sounds/2.2.mp3"/>
-      </audio>
-      <audio style="margin:20px" controls>
-        <source src="../Sounds/2.3.mp3"/>
-      </audio>
-      <audio style="margin:20px" controls>
-        <source src="../Sounds/2.4.mp3"/>
-      </audio>
-      <audio style="margin:20px" controls>
-        <source src="../Sounds/2.5.mp3"/>
-      </audio>
-  </div>
+    </div>
 
 
     <div style="overflow:auto; display: flex; flex-direction: column;text-align: center; align-items: center; color:white; flex:1 1 100%; width:100%; height:350px;">
@@ -260,4 +247,38 @@
         </a>
     </div>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const audioFiles = [
+        '../Sounds/2.1.mp3',
+        '../Sounds/2.2.mp3',
+        '../Sounds/2.3.mp3',
+        '../Sounds/2.4.mp3',
+        '../Sounds/2.5.mp3'
+      ];
+
+      const audioPlayer = document.getElementById('combinedAudio');
+      let currentIndex = 0;
+
+      // Function to play next audio
+      function playNextAudio() {
+        if (currentIndex < audioFiles.length) {
+          audioPlayer.src = audioFiles[currentIndex];
+          audioPlayer.play();
+          currentIndex++;
+        } else {
+          // Reset index to play from the beginning again
+          currentIndex = 0;
+        }
+      }
+
+      // Play the first audio file initially
+      playNextAudio();
+
+      // Event listener to play next audio when current audio ends
+      audioPlayer.addEventListener('ended', function() {
+        playNextAudio();
+      });
+    });
+  </script>
 </html>
