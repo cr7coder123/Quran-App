@@ -55,6 +55,7 @@ button{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width:33%;
     text-align: center;;
+    text-decoration: none;
 }
 #surah:hover{
     transform: scale(1.05);
