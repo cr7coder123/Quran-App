@@ -28,48 +28,6 @@
     </header>
 <!--Navigation Bar-->
 <div style="display: flex; flex-direction: row; justify-content: center; flex:1; background-color: skyblue;">
-  <a id="buttons"  href="./names.html">
-    <text style="margin-top: 10px">NAMES</text>
-    <i style="margin-bottom: 10px" class="fa-solid fa-star-and-crescent"></i>
-  </a>
-  <a id="buttons"  href="./qibla.html">
-    <text style="margin-top: 10px">QIBLA</text>
-    <i style="margin-bottom: 10px" class="fa-solid fa-compass"></i>
-  </a>
-  <a id="buttons" href="./wudu.html">
-    <text style="margin-top: 10px">WUDU</text>
-    <i style="margin-bottom: 10px"  class="fa-solid fa-water"></i>
-  </a>
-</div>
-<div style="display: flex; flex-direction: row; justify-content: center; flex:1; background-color: skyblue;">
-    <a id="buttons"  href="./pray.html">
-        <text style="margin-top: 10px">PRAY</text>
-        <i style="margin-bottom: 10px" class="fa-solid fa-person-praying"></i>
-      </a>
-    <a id="buttons" href="./nasheed.html">
-      <text style="margin-top: 10px">NASHEEDS</text>
-      <i style="margin-bottom: 10px" class="fa-solid fa-microphone"></i>
-    </a>
-    <a id="buttons"  style="background-color: darkcyan;" href="./tasbih.html">
-      <text style="margin-top: 10px">TASBIH</text>
-      <i style="margin-bottom: 10px" class="fa-solid fa-gamepad"></i>
-    </a>
-</div>
-<div style="display: flex; flex-direction: row; justify-content: center; flex:1; background-color: skyblue;">
-    <a id="buttons" href="./zakat.html">
-        <text style="margin-top: 10px">ZAKAT</text>
-        <i style="margin-bottom: 10px" class="fa-solid fa-sack-dollar"></i>
-    </a>
-    <a id="buttons" href="./hajj.html">
-        <text style="margin-top: 10px">HAJJ</text>
-        <i style="margin-bottom: 10px" class="fa-solid fa-kaaba"></i>
-    </a>
-    <a id="buttons" href="./donate.html">
-        <text style="margin-top: 10px">DONATE</text>
-        <i style="margin-bottom: 10px;" class="fa-solid fa-hand-holding-dollar"></i>
-    </a>
-</div>
-<div style="display: flex; flex-direction: row; justify-content: center; flex:1; background-color: skyblue;">
     <a id="buttons" href="./extra.html">
       <text style="margin-top: 10px">EXTRA</text>
       <i style="margin-bottom: 10px"  class="fa-solid fa-gear"></i>
@@ -79,8 +37,9 @@
 <div style="display: flex; flex-direction: column; background-color: cadetblue" id="results">
   <text style="text-align: center; justify-content: center; margin-top: 10px; font-size: 150%;" id="counter"><b>0</b></text>
   <div id="circles" style="display: flex; justify-content: center; flex-wrap: wrap;"></div>
-  <button style="margin-bottom: 10px; width: 10%; justify-content: center; align-self: center;" onclick="tasbih()">COUNT</button>
+  <button style="margin-bottom: 10px; width: 25%; justify-content: center; align-self: center; padding:15px; text-align: center; font-size:100%" onclick="tasbih()"><b>COUNT</b></button>
 </div>
+
 
     <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
         <a href="https://www.youtube.com/@RocketRoni2007">
@@ -96,7 +55,6 @@
 
       function tasbih() {
         count += 1;
-        console.log(count);
         document.getElementById("counter").innerHTML = count;
 
         // Create a new circle element
