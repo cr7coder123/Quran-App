@@ -72,7 +72,7 @@
 
     <div style="margin:20px; text-align: center">
     <form>
-      <input type="text" id="location" style="height:30px; width:75%;justify-content: center; align-self: center; border-radius: 10px; font-size: 110%; " value="Ex: New York, America">
+      <input type="text" id="location" style="height:30px; width:75%;justify-content: center; align-self: center; border-radius: 10px; font-size: 110%; " placeholder="Ex: New York, America">
       <button type="button" onclick="update()">SEARCH</button>
     </form>
   </div>
@@ -85,10 +85,13 @@
     <text style="color:white; font-size: 120%;" id="greDate">-</text>
 </div>
 
-  <div style="text-align: center; margin:10px">
-      <text style="color:white; font-size: 150%;" id="time">-</text>
-  </div>
+<div style="text-align: center; margin:10px">
+  <text style="color:white; font-size: 150%;" id="timezone">-</text>
+</div>
 
+<div style="text-align: center; margin:10px">
+  <text style="color:white; font-size: 130%;" id="time">-</text>
+</div>
 
 
   <div style=" display:flex; flex-direction: column;background-color: cadetblue; justify-content: center; text-align: center; color:white; margin: 30px; font-size:120%" >
@@ -119,7 +122,6 @@
   console.log(City)
   return City
   }
-
     var Fajr=document.getElementById("Fajr")
     var TimerFajr=document.getElementById("TimerFajr")
     var Dhuhr=document.getElementById("Dhuhr")
@@ -131,8 +133,9 @@
     var Isha=document.getElementById("Isha")
     var TimerIsha=document.getElementById("TimerIsha")
     var islamicDate=document.getElementById("date")
+    var timeZone=document.getElementById("timezone")
 function time(){
-    var sec = new Date().getSeconds();
+   /* var sec = new Date().getSeconds();
     var secZ = 0;
     if (sec < 10) {
       secZ = 0;
@@ -153,6 +156,7 @@ function time(){
     } else {
       hourZ = '';
     }
+      */
     var day = new Date().getDate();
     var dayZ = 0;
     if (day < 10) {
@@ -197,13 +201,29 @@ function time(){
       var mag = responseJson.data[day-1].timings.Maghrib;
       var ish = responseJson.data[day-1].timings.Isha;
       var dat = responseJson.data[day-1].date.hijri.date;
-      console.log(dat)
+      var zone = responseJson.data[day-1].meta.timezone;
+      console.log(zone)
       Fajr.innerHTML="Fajr: "+faj
       Dhuhr.innerHTML="Dhuhr: "+dhu
       Asr.innerHTML="Asr: "+asr
       Maghrib.innerHTML="Maghrib: "+mag
       Isha.innerHTML="Isha: "+ish
       islamicDate.innerHTML="ISLAMIC DATE: "+dat
+      timeZone.innerHTML="TimeZone: "+zone
+      
+
+
+      var timeUrl= "http://worldtimeapi.org/api/timezone/"+zone
+    fetch(timeUrl)
+      .then((response) => response.json())
+      .then((responseJson) => {
+       hour=responseJson.datetime.slice(11,13)
+       min=responseJson.datetime.slice(14,16)
+        sec=responseJson.datetime.slice(17, 19)
+      })
+
+      document.getElementById("greDate").innerText="Gregorian Date: "+dayZ+day+"-"+monthZ+month+"-"+year
+      document.getElementById('time').innerText="CURRENT TIME: "+hour+":"+min+":"+sec
 
       fajHour=(faj[0]+faj[1]-hour)*60
       fajMin=(faj[3]+faj[4])-min
@@ -248,13 +268,20 @@ function time(){
       ishMin=ishTotalMin%60
       if (ishHour>0||ishMin>0){
       TimerIsha.innerHTML="Time Until Isha: "+ishHour+" hrs "+ishMin+" Mins"
+
+
+      
+
       }
     }
-    
-    }
-    );
-    document.getElementById("greDate").innerText="Gregorian Date: "+dayZ+day+"-"+monthZ+month+"-"+year
-    document.getElementById('time').innerText="CURRENT TIME: "+hourZ+hour+":"+minZ+min+":"+secZ+sec
+
+   
+  }
+  );
+
+
+      
+  
   }
   setInterval(time,1000)
   </script>
