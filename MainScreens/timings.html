@@ -226,9 +226,10 @@ function time(){
        hour=responseJson.currentLocalTime.slice(11,13)
        min=responseJson.currentLocalTime.slice(14,16)
         sec=responseJson.currentLocalTime.slice(17, 19)
+        gregdate=responseJson.currentLocalTime.slice(0,10)
       })
 
-      document.getElementById("greDate").innerText="Gregorian Date: "+dayZ+day+"-"+monthZ+month+"-"+year
+      document.getElementById("greDate").innerText="GREGORIAN DATE: "+gregdate
       document.getElementById('time').innerText="CURRENT TIME: "+hour+":"+min+":"+sec
 
       fajHour=(faj[0]+faj[1]-hour)*60
