@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Surah Al Asr</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body style="background-color: cadetblue">
+    <!--Header-->
+    <header style="justify-content: center;display: flex;flex-direction: column;text-align: center;background-color: cadetblue;height:50px;">
+      <text style="font-size: larger; color:white;">Surah Al Asr</text>
+    </header>
+    <!--Navigation Bar-->
+    <div style="display: flex; flex-direction: row; justify-content: center; flex:1; background-color: skyblue;">
+      <a id="buttons" href="../MainScreens/quran.html">
+          <text style="margin-top: 10px;">QURAN</text>
+          <i style="margin-bottom: 10px"  class="fa-solid fa-book-quran"></i>
+      </a>
+    </div>
+
+    <div style="color:white; margin:20px; text-align: center; font-size: 100%;">
+      <text>To find the Aya/Verse you are looking for do the following. If you are on a laptop use Ctrl+f. If you are on mobile press the share button </text><i class="fa-solid fa-arrow-up-from-bracket"></i><text> on your browser and then scroll down to "find on/in page"</text>
+    </div>
+
+    <div id="results" style="text-align: center;">
+        <audio id="audioPlayer" style="margin:20px" controls>
+            <source src="../Sounds/103.mp3" type="audio/mp3"/>
+        </audio>
+    </div>
+
+    <div style="overflow:auto; display: flex; flex-direction: column;text-align: center; align-items: center; color:white; flex:1 1 100%; width:100%; height:auto;">
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 103, Verse 1</b></text>
+        <text style="font-size: 120%;"><b>وَٱلْعَصْرِ</b></text>
+        <text style="font-size: 115%;">By time,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(0)">Go to Verse 1</button>
+
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 103, Verse 2</b></text>
+        <text style="font-size: 120%;"><b>إِنَّ ٱلْإِنسَـٰنَ لَفِى خُسْرٍ</b></text>
+        <text style="font-size: 115%;">Indeed, mankind is in loss,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(0.9)">Go to Verse 2</button>
+
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 103, Verse 3</b></text>
+        <text style="font-size: 120%;"><b>إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ وَتَوَاصَوْا۟ بِٱلْحَقِّ وَتَوَاصَوْا۟ بِٱلصَّبْرِ</b></text>
+        <text style="font-size: 115%;">Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience.</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(5.3)">Go to Verse 3</button>
+
+    </div>
+
+    <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
+        <a href="https://www.youtube.com/@RocketRoni2007">
+          <i style="font-size:25px; margin:20px; text-decoration:none; color: white;" class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://www.tiktok.com/@rocketroni2007">
+          <i style="font-size:25px; margin:20px; text-decoration: none; color: white;" class="fa-brands fa-tiktok"></i>
+        </a>
+    </div>
+
+    <script>
+      function seekVerse(time) {
+        const audio = document.getElementById('audioPlayer');
+        audio.currentTime = time;
+        audio.play();
+      }
+    </script>
+  </body>
+</html>

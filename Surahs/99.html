@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Surah Az Zalzalah</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body style="background-color: cadetblue">
+    <!--Header-->
+    <header style="justify-content: center;display: flex;flex-direction: column;text-align: center;background-color: cadetblue;height:50px;">
+      <text style="font-size: larger; color:white;">Surah Az Zalzalah</text>
+    </header>
+    <!--Navigation Bar-->
+    <div style="display: flex; flex-direction: row; justify-content: center; flex:1; background-color: skyblue;">
+      <a id="buttons" href="../MainScreens/quran.html">
+          <text style="margin-top: 10px;">QURAN</text>
+          <i style="margin-bottom: 10px"  class="fa-solid fa-book-quran"></i>
+      </a>
+    </div>
+
+    <div style="color:white; margin:20px; text-align: center; font-size: 100%;">
+      <text>To find the Aya/Verse you are looking for do the following. If you are on a laptop use Ctrl+f. If you are on mobile press the share button </text><i class="fa-solid fa-arrow-up-from-bracket"></i><text> on your browser and then scroll down to "find on/in page"</text>
+    </div>
+
+    <div id="results" style="text-align: center;">
+        <audio id="audioPlayer" style="margin:20px" controls>
+            <source src="../Sounds/99.mp3" type="audio/mp3"/>
+        </audio>
+    </div>
+
+    <div style="overflow:auto; display: flex; flex-direction: column;text-align: center; align-items: center; color:white; flex:1 1 100%; width:100%; height:auto;">
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 99, Verse 1</b></text>
+        <text style="font-size: 120%;"><b>إِذَا زُلْزِلَتِ ٱلْأَرْضُ زِلْزَالَهَا</b></text>
+        <text style="font-size: 115%;">When the earth is shaken with its [final] earthquake</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(0)">Go to Verse 1</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 99, Verse 2</b></text>
+        <text style="font-size: 120%;"><b>وَأَخْرَجَتِ ٱلْأَرْضُ أَثْقَالَهَا</b></text>
+        <text style="font-size: 115%;">And the earth discharges its burdens</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(4)">Go to Verse 2</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 99, Verse 3</b></text>
+        <text style="font-size: 120%;"><b>وَقَالَ ٱلْإِنسَـٰنُ مَا لَهَا</b></text>
+        <text style="font-size: 115%;">And man says, "What is [wrong] with it?"</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(7.9)">Go to Verse 3</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 99, Verse 4</b></text>
+        <text style="font-size: 120%;"><b>يَوْمَئِذٍۢ تُحَدِّثُ أَخْبَارَهَا</b></text>
+        <text style="font-size: 115%;">That Day, it will report its news</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(13.5)">Go to Verse 4</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 99, Verse 5</b></text>
+        <text style="font-size: 120%;"><b>بِأَنَّ رَبَّكَ أَوْحَىٰ لَهَا</b></text>
+        <text style="font-size: 115%;">Because your Lord has commanded it.</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(22.6)">Go to Verse 5</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 99, Verse 6</b></text>
+        <text style="font-size: 120%;"><b>يَوْمَئِذٍۢ يَصْدُرُ ٱلنَّاسُ أَشْتَاتًۭا لِّيُرَوْا۟ أَعْمَـٰلَهُمْ</b></text>
+        <text style="font-size: 115%;">That Day, the people will depart separated [into categories] to be shown [the result of] their deeds.</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(26.7)">Go to Verse 6</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 99, Verse 7</b></text>
+        <text style="font-size: 120%;"><b>فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًۭا يَرَهُۥ</b></text>
+        <text style="font-size: 115%;">So whoever does an atom's weight of good will see it,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(39.8)">Go to Verse 7</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 99, Verse 8</b></text>
+        <text style="font-size: 120%;"><b>وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍۢ شَرًّۭا يَرَهُۥ</b></text>
+        <text style="font-size: 115%;">And whoever does an atom's weight of evil will see it.</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(47.3)">Go to Verse 8</button>
+        
+    </div>
+
+    <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
+        <a href="https://www.youtube.com/@RocketRoni2007">
+          <i style="font-size:25px; margin:20px; text-decoration:none; color: white;" class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://www.tiktok.com/@rocketroni2007">
+          <i style="font-size:25px; margin:20px; text-decoration: none; color: white;" class="fa-brands fa-tiktok"></i>
+        </a>
+    </div>
+
+    <script>
+      function seekVerse(time) {
+        const audio = document.getElementById('audioPlayer');
+        audio.currentTime = time;
+        audio.play();
+      }
+    </script>
+  </body>
+</html>
