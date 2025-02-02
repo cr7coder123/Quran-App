@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Surah Ash Shams</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body style="background-color: cadetblue">
+    <!--Header-->
+    <header style="justify-content: center;display: flex;flex-direction: column;text-align: center;background-color: cadetblue;height:50px;">
+      <text style="font-size: larger; color:white;">Surah Ash Shams</text>
+    </header>
+    <!--Navigation Bar-->
+    <div style="display: flex; flex-direction: row; justify-content: center; flex:1; background-color: skyblue;">
+      <a id="buttons" href="../MainScreens/quran.html">
+          <text style="margin-top: 10px;">QURAN</text>
+          <i style="margin-bottom: 10px"  class="fa-solid fa-book-quran"></i>
+      </a>
+    </div>
+
+    <div style="color:white; margin:20px; text-align: center; font-size: 100%;">
+      <text>To find the Aya/Verse you are looking for do the following. If you are on a laptop use Ctrl+f. If you are on mobile press the share button </text><i class="fa-solid fa-arrow-up-from-bracket"></i><text> on your browser and then scroll down to "find on/in page"</text>
+    </div>
+
+    <div id="results" style="text-align: center;">
+        <audio id="audioPlayer" style="margin:20px" controls>
+            <source src="../Sounds/91.mp3" type="audio/mp3"/>
+        </audio>
+    </div>
+
+    <div style="overflow:auto; display: flex; flex-direction: column;text-align: center; align-items: center; color:white; flex:1 1 100%; width:100%; height:auto;">
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 1</b></text>
+        <text style="font-size: 120%;"><b>وَٱلشَّمْسِ وَضُحَىٰهَا</b></text>
+        <text style="font-size: 115%;">By the sun and its brightness,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(1)">Go to Verse 1</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 2</b></text>
+        <text style="font-size: 120%;"><b>وَٱلْقَمَرِ إِذَا تَلَىٰهَا</b></text>
+        <text style="font-size: 115%;">And [by] the moon when it follows it,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(2)">Go to Verse 2</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 3</b></text>
+        <text style="font-size: 120%;"><b>وَٱلنَّهَارِ إِذَا جَلَّىٰهَا</b></text>
+        <text style="font-size: 115%;">And [by] the day when it displays it,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(3)">Go to Verse 3</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 4</b></text>
+        <text style="font-size: 120%;"><b>وَٱلَّيْلِ إِذَا يَغْشَىٰهَا</b></text>
+        <text style="font-size: 115%;">And [by] the night when it covers it,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(4)">Go to Verse 4</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 5</b></text>
+        <text style="font-size: 120%;"><b>وَٱلسَّمَآءِ وَمَا بَنَىٰهَا</b></text>
+        <text style="font-size: 115%;">And [by] the sky and He who constructed it,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(5)">Go to Verse 5</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 6</b></text>
+        <text style="font-size: 120%;"><b>وَٱلْأَرْضِ وَمَا طَحَىٰهَا</b></text>
+        <text style="font-size: 115%;">And [by] the earth and He who spread it,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(6)">Go to Verse 6</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 7</b></text>
+        <text style="font-size: 120%;"><b>وَنَفْسٍۢ وَمَا سَوَّىٰهَا</b></text>
+        <text style="font-size: 115%;">And [by] the soul and He who proportioned it,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(7)">Go to Verse 7</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 8</b></text>
+        <text style="font-size: 120%;"><b>فَأَلْهَمَهَا فُجُورَهَا وَتَقْوَىٰهَا</b></text>
+        <text style="font-size: 115%;">And inspired it [with discernment of] its wickedness and its righteousness,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(8)">Go to Verse 8</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 9</b></text>
+        <text style="font-size: 120%;"><b>قَدْ أَفْلَحَ مَن زَكَّىٰهَا</b></text>
+        <text style="font-size: 115%;">He has succeeded who purifies it,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(9)">Go to Verse 9</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 10</b></text>
+        <text style="font-size: 120%;"><b>وَقَدْ خَابَ مَن دَسَّىٰهَا</b></text>
+        <text style="font-size: 115%;">And he has failed who instills it [with corruption].</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(10)">Go to Verse 10</button>
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 11</b></text>
+        <text style="font-size: 120%;"><b>كَذَّبَتْ ثَمُودُ بِطَغْوَىٰهَا</b></text>
+        <text style="font-size: 115%;">Thamud denied [their prophet] by reason of their transgression,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(11)">Go to Verse 11</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 12</b></text>
+        <text style="font-size: 120%;"><b>إِذِ ٱنۢبَعَثَ أَشْقَىٰهَا</b></text>
+        <text style="font-size: 115%;">When the most wretched of them was sent forth,</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(12)">Go to Verse 12</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 13</b></text>
+        <text style="font-size: 120%;"><b>فَقَالَ لَهُمْ رَسُولُ ٱللَّهِ نَاقَةَ ٱللَّهِ وَسُقْيَٰهَا</b></text>
+        <text style="font-size: 115%;">And the messenger of Allah [Salih] said to them, "[Do not harm] the she-camel of Allah or [prevent her from] her drink."</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(13)">Go to Verse 13</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 14</b></text>
+        <text style="font-size: 120%;"><b>فَكَذَّبُوهُ فَعَقَرُوهَا فَدَمْدَمَ عَلَيْهِمْ رَبُّهُم بِذَنبِهِمْ فَسَوَّىٰهَا</b></text>
+        <text style="font-size: 115%;">But they denied him and hamstrung her. So their Lord brought down upon them destruction for their sin and made it equal [upon all of them].</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(14)">Go to Verse 14</button>
+        
+        <text style="font-size: 125%; margin:10px;"><b>Chapter 91, Verse 15</b></text>
+        <text style="font-size: 120%;"><b>وَلَا يَخَافُ عُقْبَٰهَا</b></text>
+        <text style="font-size: 115%;">And He does not fear the consequence thereof.</text>
+        <br/>
+        <button style="margin:10px;" onclick="seekVerse(15)">Go to Verse 15</button>
+        
+    </div>
+
+    <div style="display: flex; flex-direction: row; align-items:flex-end; justify-content: center; flex:1; align-self:baseline; background-color: skyblue;">
+        <a href="https://www.youtube.com/@RocketRoni2007">
+          <i style="font-size:25px; margin:20px; text-decoration:none; color: white;" class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://www.tiktok.com/@rocketroni2007">
+          <i style="font-size:25px; margin:20px; text-decoration: none; color: white;" class="fa-brands fa-tiktok"></i>
+        </a>
+    </div>
+
+    <script>
+      function seekVerse(time) {
+        const audio = document.getElementById('audioPlayer');
+        audio.currentTime = time;
+        audio.play();
+      }
+    </script>
+  </body>
+</html>

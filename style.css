@@ -53,7 +53,7 @@ button{
     align-items: center;
     font-size:70%;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width:33%;
+    width:90%;
     text-align: center;;
     text-decoration: none;
 }
@@ -64,7 +64,7 @@ button{
 
 #quran{
     display: flex; 
-    flex-direction: row; 
+    flex-direction: column; 
     justify-content: center;
 }
 
